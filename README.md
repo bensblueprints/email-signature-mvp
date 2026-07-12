@@ -41,7 +41,7 @@ npm start
 
 Don't want to touch Node? Grab the packaged installer (and support development):
 
-**→ [https://whop.com/onetime-suite](https://whop.com/onetime-suite)**
+**→ [https://whop.com/benjisaiempire/sigcraft](https://whop.com/benjisaiempire/sigcraft)**
 
 ## vs WiseStamp
 
