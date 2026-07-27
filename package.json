@@ -1,7 +1,7 @@
 {
   "name": "email-signature-studio",
   "productName": "Email Signature Studio",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Desktop email signature generator. Pay once, own it forever - no WiseStamp subscription.",
   "main": "main.js",
   "author": "Ben (bensblueprints)",
