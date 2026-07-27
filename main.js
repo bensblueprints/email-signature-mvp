@@ -3,6 +3,7 @@ const { app, BrowserWindow, ipcMain, dialog, clipboard, shell } = require('elect
 const path = require('path');
 const fs = require('fs');
 const store = require('./src/store');
+const { gateLicense, registerLicenseIpc } = require('./license-gate');
 
 let win = null;
 const profilesPath = () => path.join(app.getPath('userData'), 'profiles.json');
@@ -102,7 +103,9 @@ ipcMain.handle('shell:openExternal', (_e, url) => {
   return true;
 });
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  if (!(await gateLicense())) return; // quit already requested
+  registerLicenseIpc();
   createWindow();
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
